@@ -1,0 +1,117 @@
+{
+  "version": 1,
+  "columns": 4,
+  "rows": 2,
+  "items": [
+    {
+      "id": "notebook",
+      "label": "Cuaderno",
+      "column": 0,
+      "row": 0
+    },
+    {
+      "id": "folder",
+      "label": "Carpeta",
+      "column": 1,
+      "row": 0
+    },
+    {
+      "id": "app",
+      "label": "Aplicacion",
+      "column": 2,
+      "row": 0
+    },
+    {
+      "id": "play",
+      "label": "Reproducir",
+      "column": 3,
+      "row": 0
+    },
+    {
+      "id": "console",
+      "label": "Consola",
+      "column": 0,
+      "row": 1
+    },
+    {
+      "id": "plant",
+      "label": "Planta",
+      "column": 1,
+      "row": 1
+    },
+    {
+      "id": "star",
+      "label": "Estrella",
+      "column": 2,
+      "row": 1
+    },
+    {
+      "id": "bolt",
+      "label": "Accion",
+      "column": 3,
+      "row": 1
+    }
+  ],
+  "styles": [
+    {
+      "id": "modern",
+      "label": "Moderno",
+      "path": "assets/shortcuts/modern-v1.png",
+      "columns": 4,
+      "rows": 2,
+      "width": 1774,
+      "height": 887,
+      "cellWidth": 443.5,
+      "cellHeight": 443.5,
+      "hasAlpha": true
+    },
+    {
+      "id": "cute",
+      "label": "Cute",
+      "path": "assets/shortcuts/cute-v1.png",
+      "columns": 4,
+      "rows": 2,
+      "width": 1774,
+      "height": 887,
+      "cellWidth": 443.5,
+      "cellHeight": 443.5,
+      "hasAlpha": true
+    },
+    {
+      "id": "minimal",
+      "label": "Minimalista",
+      "path": "assets/shortcuts/minimal-v1.png",
+      "columns": 4,
+      "rows": 2,
+      "width": 1774,
+      "height": 887,
+      "cellWidth": 443.5,
+      "cellHeight": 443.5,
+      "hasAlpha": true
+    },
+    {
+      "id": "natural",
+      "label": "Natural",
+      "path": "assets/shortcuts/natural-v1.png",
+      "columns": 4,
+      "rows": 2,
+      "width": 1774,
+      "height": 887,
+      "cellWidth": 443.5,
+      "cellHeight": 443.5,
+      "hasAlpha": true
+    },
+    {
+      "id": "geek",
+      "label": "Geek",
+      "path": "assets/shortcuts/geek-v1.png",
+      "columns": 4,
+      "rows": 2,
+      "width": 1774,
+      "height": 887,
+      "cellWidth": 443.5,
+      "cellHeight": 443.5,
+      "hasAlpha": true
+    }
+  ]
+}

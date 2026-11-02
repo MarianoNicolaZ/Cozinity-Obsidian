@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="224" y1="36" x2="1326" y2="966" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5FAFE"/>
+      <stop offset="0.55" stop-color="#EEF5FB"/>
+      <stop offset="1" stop-color="#F4EFFC"/>
+    </linearGradient>
+    <radialGradient id="pink" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(544 764) rotate(90) scale(292 352)">
+      <stop stop-color="#FF79B0" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#FF79B0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mint" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1124 314) rotate(90) scale(272 330)">
+      <stop stop-color="#79F8DF" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#79F8DF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gold" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1288 690) rotate(90) scale(244 288)">
+      <stop stop-color="#FCD43E" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#FCD43E" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ice" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(236 242) rotate(90) scale(238 280)">
+      <stop stop-color="#FFFFFF" stop-opacity="0.92"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <circle cx="544" cy="764" r="352" fill="url(#pink)"/>
+  <circle cx="1124" cy="314" r="330" fill="url(#mint)"/>
+  <circle cx="1288" cy="690" r="288" fill="url(#gold)"/>
+  <circle cx="236" cy="242" r="280" fill="url(#ice)"/>
+  <g opacity="0.26">
+    <circle cx="1334" cy="190" r="44" fill="#FFFFFF"/>
+    <circle cx="1386" cy="246" r="18" fill="#FFFFFF"/>
+    <circle cx="1456" cy="212" r="14" fill="#FFFFFF"/>
+    <circle cx="1212" cy="152" r="12" fill="#FFFFFF"/>
+  </g>
+  <g opacity="0.18">
+    <rect x="182" y="184" width="1192" height="616" rx="56" fill="white"/>
+  </g>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" fill="none">
+  <defs>
+    <linearGradient id="vignette" x1="800" y1="0" x2="800" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.22"/>
+      <stop offset="0.45" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="1" stop-color="#7B88A8" stop-opacity="0.08"/>
+    </linearGradient>
+    <radialGradient id="spotA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(796 520) rotate(90) scale(404 518)">
+      <stop stop-color="#FFFFFF" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="spotB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1128 254) rotate(90) scale(160 200)">
+      <stop stop-color="#FFFFFF" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#vignette)"/>
+  <ellipse cx="796" cy="520" rx="518" ry="404" fill="url(#spotA)"/>
+  <ellipse cx="1128" cy="254" rx="200" ry="160" fill="url(#spotB)"/>
+  <g opacity="0.16">
+    <path d="M192 816C352 690 570 654 808 668C1046 682 1240 646 1408 542" stroke="white" stroke-width="8" stroke-linecap="round"/>
+    <path d="M220 844C388 730 590 700 798 712C1034 724 1210 694 1380 604" stroke="#DCE7F6" stroke-width="4" stroke-linecap="round"/>
+  </g>
+</svg>

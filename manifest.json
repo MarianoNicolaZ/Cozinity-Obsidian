@@ -1,0 +1,9 @@
+{
+  "id": "cozynity",
+  "name": "Cozinity",
+  "version": "0.1.11",
+  "minAppVersion": "1.5.0",
+  "description": "A visual workspace for Obsidian. Un espacio visual para Obsidian. Español / English.",
+  "author": "Detuco",
+  "isDesktopOnly": true
+}

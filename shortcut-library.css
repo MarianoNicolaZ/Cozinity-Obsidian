@@ -1,0 +1,138 @@
+/* Shortcut library: only dashboard-owned UI, never plugin-view internals. */
+.cozy-nest-dashboard-root .cozy-shortcut-library {
+  display:flex; flex-direction:column; min-width:0; min-height:0; height:100%; overflow:auto;
+}
+.cozy-shortcut-toolbar { display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin-bottom:8px; flex:0 0 auto; }
+.cozy-shortcut-button { cursor:pointer; }
+:is(.cozy-nest-dashboard-root .cozy-shortcut-library,.cozy-shortcut-modal) .cozy-shortcut-button {
+  min-height:30px; padding:5px 9px; border:1px solid var(--cozy-button-border,var(--background-modifier-border)); border-radius:var(--cozy-radius-button,6px);
+  background:var(--cozy-button-bg,var(--interactive-normal)); color:var(--cozy-text,var(--text-normal)); box-shadow:none; font:inherit; line-height:1.35;
+}
+:is(.cozy-nest-dashboard-root .cozy-shortcut-library,.cozy-shortcut-modal) .cozy-shortcut-button:hover { background:var(--cozy-button-hover,var(--interactive-hover)); }
+:is(.cozy-nest-dashboard-root .cozy-shortcut-library,.cozy-shortcut-modal) .cozy-shortcut-button:focus-visible { outline:2px solid var(--cozy-accent,var(--interactive-accent)); outline-offset:2px; }
+.cozy-shortcut-toolbar input.cozy-shortcut-search { min-width:110px; flex:1 1 140px; width:auto; max-width:100%; }
+.cozy-shortcut-toolbar select { min-width:0; width:auto; max-width:100%; }
+.cozy-shortcut-stage { flex:1 1 0; min-height:80px; min-width:0; overflow:auto; display:flex; flex-direction:column; gap:var(--cozy-shortcut-gap,16px); scrollbar-gutter:stable; padding:2px 4px 8px; overscroll-behavior:contain; }
+.cozy-shortcut-shelf { flex:0 0 auto; min-width:0; position:relative; padding:0; }
+.cozy-shortcut-shelf[data-look="none"] { padding-bottom:0; }
+.cozy-shortcut-shelf::after { content:""; display:block; height:6px; margin-top:6px; border-radius:2px; background:var(--cozy-panel-border); }
+.cozy-shortcut-shelf[data-look="none"]::after { display:none; }
+.cozy-shortcut-shelf[data-look="line"]::after { height:1px; margin-top:11px; background:color-mix(in srgb,var(--cozy-text-muted) 22%,transparent); }
+.cozy-shortcut-shelf[data-look="wood"]::after { background:repeating-linear-gradient(2deg,transparent 0 3px,color-mix(in srgb,var(--cozy-accent-2) 18%,transparent) 4px 5px),linear-gradient(180deg,color-mix(in srgb,var(--cozy-accent) 40%,var(--cozy-chip-bg)),var(--cozy-chip-bg)); box-shadow:0 3px 5px var(--cozy-panel-shadow); }
+.cozy-shortcut-shelf[data-look="glass"]::after { background:color-mix(in srgb,var(--cozy-text) 10%,transparent); border:1px solid color-mix(in srgb,var(--cozy-text-muted) 25%,transparent); }
+.cozy-shortcut-shelf[data-look="soft"]::after { background:var(--cozy-chip-bg); border-radius:6px; box-shadow:0 2px 4px var(--cozy-panel-shadow); }
+.cozy-shortcut-shelf[data-look="pixel"]::after { background:color-mix(in srgb,var(--cozy-accent-2) 65%,var(--cozy-panel-top)); border-radius:0; box-shadow:0 3px 0 var(--cozy-panel-border); image-rendering:pixelated; }
+.cozy-shortcut-shelf-title { height:24px; line-height:24px; margin:0!important; font:600 12px/24px var(--font-interface,system-ui)!important; color:var(--cozy-text-muted); }
+.cozy-shortcut-grid { display:grid; grid-template-columns:repeat(var(--cozy-shortcut-columns,3),var(--cozy-shortcut-cell-width,104px)); gap:var(--cozy-shortcut-gap,16px); grid-auto-rows:var(--cozy-shortcut-row-height,160px); min-width:0; }
+.cozy-shortcut-tile { min-width:0; position:relative; display:flex; align-items:stretch; justify-content:center; padding:0 4px; box-sizing:border-box; --cozy-shortcut-icon-size:calc(var(--cozy-shortcut-base-size,96px) * var(--cozy-shortcut-item-scale,1)); }
+.cozy-nest-dashboard-root .cozy-shortcut-library .cozy-shortcut-launch {
+  display:flex; flex-direction:column; justify-content:center; align-items:center; gap:0; min-width:0; width:100%; height:100%; padding:6px 0; border:0!important; border-image:none!important;
+  background:transparent!important; color:var(--cozy-text)!important; box-shadow:none!important; border-radius:var(--cozy-radius-button,6px); cursor:pointer; font:inherit;
+}
+.cozy-shortcut-launch:hover { outline:1px solid color-mix(in srgb,var(--cozy-text-muted) 18%,transparent); outline-offset:0; }
+.cozy-shortcut-launch:focus-visible { outline:2px solid var(--cozy-accent)!important; outline-offset:-2px; }
+.cozy-shortcut-icon { width:var(--cozy-shortcut-icon-size,96px); height:var(--cozy-shortcut-icon-size,96px); flex:0 0 auto; display:flex; align-items:center; justify-content:center; position:relative; }
+.cozy-shortcut-icon :is(img,.cozy-shortcut-generated-art,.cozy-shortcut-room-art) { pointer-events:none; }
+.cozy-shortcut-room-art,.cozy-shortcut-generated-art { display:block; flex:none; background-repeat:no-repeat; }
+.cozy-shortcut-custom-image { display:block; max-width:100%; max-height:100%; object-fit:contain; }
+.cozy-shortcut-book-image { display:block; width:100%; height:100%; object-fit:contain; }
+.cozy-shortcut-book { position:relative; display:block; width:70%; height:90%; border-radius:3px 7px 7px 3px; background:linear-gradient(90deg,color-mix(in srgb,var(--notebook-cover,var(--cozy-accent)) 80%,#000) 0 7%,var(--notebook-cover,var(--cozy-accent)) 8% 95%,var(--notebook-page,var(--cozy-panel-top)) 96%); box-shadow:2px 3px 4px var(--cozy-panel-shadow); }
+.cozy-shortcut-book-spine { position:absolute; inset:0 auto 0 10%; width:1px; background:color-mix(in srgb,var(--cozy-text) 12%,transparent); }
+.cozy-shortcut-book-mark { position:absolute; top:0; right:15%; width:9%; height:25%; background:var(--cozy-accent-2); clip-path:polygon(0 0,100% 0,100% 100%,50% 80%,0 100%); }
+.cozy-shortcut-symbol { display:flex; align-items:center; justify-content:center; width:74%; height:74%; border-radius:24%; background:var(--cozy-chip-bg); color:var(--cozy-text); }
+.cozy-shortcut-symbol svg { width:58%; height:58%; stroke-width:1.5; }
+.cozy-shortcut-caption { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; max-width:100%; min-height:0; max-height:32px; line-height:16px; font-size:12px; overflow:hidden; text-overflow:ellipsis; overflow-wrap:anywhere; text-align:center; color:var(--cozy-text); }
+.cozy-shortcut-library[data-label-mode="hover"] .cozy-shortcut-caption { display:none; }
+.cozy-shortcut-library[data-label-mode="hover"] .cozy-shortcut-launch:is(:hover,:focus-within) .cozy-shortcut-caption { display:-webkit-box; position:absolute; bottom:3px; left:4px; right:4px; padding:4px; max-height:40px; z-index:2; background:var(--cozy-panel-top); border-radius:4px; box-shadow:0 2px 6px var(--cozy-panel-shadow); }
+.cozy-shortcut-library[data-label-mode="hidden"] .cozy-shortcut-caption { display:none; }
+.cozy-shortcut-unbound { position:absolute; bottom:0; font-size:10px; color:var(--cozy-text-muted); }
+.cozy-shortcut-item-actions { position:absolute; right:0; top:0; display:flex; gap:2px; z-index:3; }
+.cozy-shortcut-item-actions .cozy-shortcut-button { width:24px; min-height:24px!important; height:24px; padding:3px!important; }
+.cozy-shortcut-item-actions svg { width:14px; height:14px; }
+.cozy-shortcut-stage[data-editing="true"] .cozy-shortcut-tile { outline:1px dashed color-mix(in srgb,var(--cozy-text-muted) 35%,transparent); border-radius:6px; cursor:grab; }
+.cozy-shortcut-stage[data-layout="list"] .cozy-shortcut-grid { grid-template-columns:minmax(0,1fr); }
+.cozy-shortcut-stage[data-layout="list"] .cozy-shortcut-launch { flex-direction:row; justify-content:flex-start; gap:14px; }
+.cozy-shortcut-stage[data-layout="list"] .cozy-shortcut-caption { text-align:left; }
+.cozy-shortcut-empty,.cozy-shortcut-empty-shelf,.cozy-shortcut-hint { color:var(--cozy-text-muted,var(--text-muted)); font-size:12px; line-height:1.5; }
+.cozy-shortcut-empty-shelf { grid-column:1/-1; margin:0; min-height:48px; display:flex; align-items:center; justify-content:center; border:1px dashed var(--cozy-panel-border); }
+.cozy-shortcut-fit-status { flex:none; font-size:11px; color:var(--cozy-text-muted); line-height:1.4; padding-top:4px; }
+.cozy-shortcut-fit-status:empty { display:none; }
+.cozy-shortcut-footer { display:flex; justify-content:flex-end; flex:0 0 auto; padding-top:4px; }
+.cozy-shortcut-footer .cozy-shortcut-button { font-size:11px!important; min-height:24px!important; border:0!important; background:transparent!important; color:var(--cozy-text-muted)!important; }
+.cozy-shortcut-modal { width:min(680px,calc(100vw - 24px)); max-width:calc(100vw - 24px); max-height:90vh; }
+.cozy-shortcut-modal .modal-content { overflow-y:auto; overflow-x:hidden; min-width:0; max-height:calc(90vh - 60px); display:flex; flex-direction:column; gap:12px; }
+.cozy-shortcut-modal h2 { font:600 20px/1.3 var(--font-interface,system-ui); margin:0 0 4px; }
+.cozy-shortcut-field { display:flex; flex-direction:column; gap:5px; min-width:0; font-size:12px; }
+.cozy-shortcut-field>span { font-weight:600; color:var(--cozy-text,var(--text-normal)); }
+.cozy-shortcut-field :is(input,select) { width:100%; min-width:0; }
+.cozy-shortcut-field input[type="checkbox"] { width:auto; align-self:flex-start; }
+.cozy-shortcut-modal-actions { display:flex; justify-content:flex-end; flex-wrap:wrap; gap:8px; position:sticky; bottom:0; background:var(--cozy-panel-top,var(--background-primary)); padding:10px 0 0; z-index:4; }
+.cozy-shortcut-editor-preview { --cozy-shortcut-icon-size:96px; min-height:124px; display:flex; align-items:center; justify-content:center; gap:18px; background:var(--cozy-chip-bg,var(--background-secondary)); border-radius:var(--cozy-radius-panel,8px); padding:12px; }
+.cozy-shortcut-editor-preview strong { overflow-wrap:anywhere; }
+.cozy-shortcut-object-grid { --cozy-shortcut-icon-size:60px; display:grid; grid-template-columns:repeat(auto-fill,minmax(86px,1fr)); gap:6px; max-height:280px; overflow:auto; padding:4px; }
+.cozy-shortcut-object-grid .cozy-shortcut-button { min-width:0; min-height:94px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; font-size:10px!important; white-space:normal; }
+.cozy-shortcut-object-grid .cozy-shortcut-button.is-selected { outline:2px solid var(--cozy-accent); outline-offset:-2px; }
+.cozy-shortcut-choice-art { display:flex; width:60px; height:60px; align-items:center; justify-content:center; }
+.cozy-shortcut-object-grid .cozy-shortcut-button>svg { width:30px; height:30px; }
+.cozy-shortcut-icon-options { display:grid; gap:10px; }
+.cozy-shortcut-shelf-settings { display:grid; gap:12px; }
+.cozy-shortcut-shelf-editor { display:grid; gap:8px; padding:12px; background:var(--cozy-chip-bg,var(--background-secondary)); border-radius:var(--cozy-radius-panel,6px); }
+.cozy-shortcut-error { color:var(--text-error,#b84b4b); min-height:1em; font-size:12px; }
+.cozy-nest-dashboard-root[data-theme-pack="notion-bare"] .cozy-shortcut-book { box-shadow:none; }
+.cozy-nest-dashboard-root[data-theme-pack="notion-bare"] .cozy-shortcut-button { border-color:transparent!important; box-shadow:none!important; }
+.cozy-nest-dashboard-root[data-theme-pack="stardew-valley-cozy"] :is(.cozy-shortcut-button,.cozy-shortcut-symbol,.cozy-shortcut-book) { border-radius:0; }
+@media (prefers-reduced-motion:reduce) { .cozy-shortcut-library * { transition:none!important; } }
+/* Clay's universal white gloss washes out small light labels in dark mode.
+   Keep its sculpted relief and rounded borders, with the readable theme paint. */
+.theme-dark .cozy-nest-dashboard-root[data-theme-pack="claymorphism-3d"] .cozy-shortcut-library :is(.cozy-shortcut-search-bar,.cozy-shortcut-item-actions) .cozy-shortcut-button,
+.theme-dark .modal.cozy-themed-modal.cozy-shortcut-modal[data-theme-pack="claymorphism-3d"] .cozy-shortcut-button {
+  background:var(--cozy-button-bg)!important;
+  color:var(--cozy-text)!important;
+}
+.theme-dark .cozy-nest-dashboard-root[data-theme-pack="claymorphism-3d"] .cozy-shortcut-library :is(.cozy-shortcut-search-bar,.cozy-shortcut-item-actions) .cozy-shortcut-button:hover,
+.theme-dark .modal.cozy-themed-modal.cozy-shortcut-modal[data-theme-pack="claymorphism-3d"] .cozy-shortcut-button:hover {
+  background:var(--cozy-button-hover)!important;
+}
+/* Palette assets must stay inside their own interactive cells. */
+.cozy-shortcut-object-grid { grid-auto-rows:100px; align-content:start; min-width:0; }
+.cozy-shortcut-object-grid .cozy-shortcut-button { height:100px; min-height:100px; overflow:hidden; }
+.cozy-shortcut-choice-art { flex:0 0 60px; min-width:0; overflow:hidden; pointer-events:none; }
+.cozy-shortcut-choice-art>*,.cozy-shortcut-room-art,.cozy-shortcut-generated-art { pointer-events:none; }
+
+/* Native range controls include inline margins; keep every editor field within its column. */
+.cozy-shortcut-modal,.cozy-shortcut-modal * { box-sizing:border-box; }
+.cozy-shortcut-modal .modal-content>* { flex-shrink:0; min-width:0; }
+.cozy-shortcut-field :is(input,select) { max-width:100%; margin-inline:0; }
+
+.cozy-shortcut-search-bar { display:flex; align-items:center; gap:4px; margin-bottom:6px; flex:none; }
+.cozy-shortcut-search-bar input { min-width:0; flex:1; width:100%; }
+.cozy-shortcut-stage[data-layout="list"] .cozy-shortcut-grid { grid-template-columns:minmax(0,1fr); }
+.cozy-shortcut-choice-art .cozy-shortcut-book-image { object-fit:contain; image-rendering:auto; }
+.cozy-shortcut-modal .cozy-shortcut-hint { color:var(--cozy-text,var(--text-normal)); }
+
+/* A single editor owns both content and shelf appearance, with the real renderer. */
+.modal.cozy-shortcut-settings { width:min(1120px,calc(100vw - 24px)); }
+.cozy-shortcut-settings-workspace { display:grid; grid-template-columns:minmax(0,1fr) minmax(240px,300px); gap:24px; min-width:0; }
+.cozy-shortcut-settings-canvas { min-width:0; align-self:start; position:sticky; top:0; }
+.cozy-shortcut-settings-tools { display:flex; flex-direction:column; gap:12px; min-width:0; }
+.cozy-nest-dashboard-root.cozy-shortcut-live-preview { min-width:0; padding:8px!important; background:var(--cozy-panel-top)!important; border-radius:var(--cozy-radius-panel,8px); overflow:hidden; }
+.cozy-shortcut-live-preview .cozy-shortcut-library { margin:0!important; padding:8px!important; height:100%!important; min-height:0!important; box-shadow:none!important; }
+.cozy-shortcut-settings .cozy-shortcut-toolbar { margin:0; }
+.cozy-shortcut-settings .cozy-shortcut-settings-workspace { flex-shrink:1; }
+@media(max-width:760px) { .cozy-shortcut-settings-workspace { grid-template-columns:minmax(0,1fr); gap:16px; } .cozy-shortcut-settings-canvas { position:static; } .cozy-shortcut-live-preview { max-height:300px; } }
+.cozy-shortcut-settings :is(.cozy-shortcut-empty,.cozy-shortcut-empty-shelf,.cozy-shortcut-fit-status) { color:var(--cozy-text,var(--text-normal)); }
+
+/* Keep the live canvas in view while the settings column scrolls. */
+.cozy-shortcut-settings .cozy-shortcut-settings-workspace { height:min(65vh,650px); min-height:0; overflow:hidden; }
+.cozy-shortcut-settings-canvas { position:static; display:flex; flex-direction:column; height:100%; min-height:0; }
+.cozy-shortcut-settings-canvas>.cozy-shortcut-live-preview { flex:1 1 0; min-height:160px; }
+.cozy-shortcut-settings-tools { min-height:0; max-height:100%; overflow:auto; padding-right:4px; }
+.cozy-shortcut-settings .cozy-shortcut-item-actions { visibility:hidden; }
+.cozy-shortcut-settings .cozy-shortcut-tile:is(:hover,:focus-within) .cozy-shortcut-item-actions { visibility:visible; }
+@media(pointer:coarse) { .cozy-shortcut-settings .cozy-shortcut-item-actions { visibility:visible; } }
+@media(max-width:760px) {
+  .cozy-shortcut-settings .cozy-shortcut-settings-workspace { height:auto; overflow:visible; flex-shrink:0; }
+  .cozy-shortcut-settings-canvas { height:auto; }
+  .cozy-shortcut-settings-canvas>.cozy-shortcut-live-preview { height:240px!important; flex:none; }
+  .cozy-shortcut-settings-tools { max-height:none; overflow:visible; }
+}

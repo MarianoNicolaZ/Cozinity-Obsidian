@@ -1,0 +1,63 @@
+const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('fs'),vm=require('vm'),path=require('path');
+class Base{};class File{constructor(path){this.path=path;this.name=path.split('/').pop();this.extension=this.name.split('.').pop();}}class Folder{constructor(path){this.path=path;}}
+const ctx={module:{exports:{}},console,setTimeout,clearTimeout,require:()=>({Plugin:Base,ItemView:Base,Modal:Base,PluginSettingTab:Base,FuzzySuggestModal:Base,TFile:File,TFolder:Folder,Notice:Base,normalizePath:p=>p.replace(/^\/+|\/+$/g,'')})};
+vm.runInNewContext(fs.readFileSync(path.join(__dirname,'../main.js'),'utf8')+'\nmodule.exports={parseOverlayTransfer,applyOverlayTransfer,roomAppearanceIndex,nextRoomAppearance,normalizeCozyHouse};',ctx);
+const api=ctx.module.exports;
+test('web image drop downloads bytes and note destination appends without replacing',async()=>{
+ const f=fixture();f.plugin.app.vault.process=async(file,cb)=>f.content.set(file.path,cb(f.content.get(file.path)));
+ f.plugin.importWebImageUrl=async()=>{const file=new File('saved.png');f.files.set(file.path,file);return file;};
+ await api.applyOverlayTransfer(f.plugin,{kind:'web-image',url:'https://example.com/a.png'},{kind:'note',path:'old.md'});
+ assert.equal(f.content.get('old.md'),'original\n\n![[saved.png]]\n');
+ f.plugin.importWebImageUrl=async()=>null;
+ await assert.rejects(()=>api.applyOverlayTransfer(f.plugin,{kind:'web-image',url:'https://example.com/b.png'},{kind:'note',path:'old.md'}));
+ assert.equal(f.content.get('old.md'),'original\n\n![[saved.png]]\n');
+});
+const dt=(data={},files=[])=>({getData:t=>data[t]||'',files});
+function fixture(){const files=new Map([['Notes',new Folder('Notes')],['old.md',new File('old.md')]]),content=new Map([['old.md','original']]),meta={tags:['old'],custom:42};let confirms=0;
+ const plugin={settings:{activeDashboardProfileId:'p',panelLayout:[{id:'q',type:'quick_note_draft',quickDraftText:'before'}]},canWriteVault:()=>true,savePluginSettings:async()=>{},refreshPanelViews:()=>{},app:{vault:{getAbstractFileByPath:p=>files.get(p),create:async(p,t)=>{if(files.has(p))throw Error('exists');const f=new File(p);files.set(p,f);content.set(p,t);return f;},createBinary:async(p,b)=>{const f=new File(p);files.set(p,f);content.set(p,b);return f;}},fileManager:{processFrontMatter:async(f,cb)=>cb(meta),renameFile:async(f,p)=>{files.delete(f.path);content.set(p,content.get(f.path));content.delete(f.path);f.path=p;files.set(p,f);}}}};
+ return {plugin,files,content,meta};}
+test('appearance cycles, bound legacy switches remain actions',()=>{
+ assert.equal(api.nextRoomAppearance(''),'detuco-studio');assert.equal(api.nextRoomAppearance('detuco-studio'),'detuco-neon');assert.equal(api.nextRoomAppearance('detuco-neon'),'cozy-clay');assert.equal(api.nextRoomAppearance('cozy-clay'),'');
+ const room=api.normalizeCozyHouse({version:2,rooms:[{id:'r',objects:[{id:'a',type:'toggle_switch',binding:{kind:'tag',path:'#a'}},{id:'b',type:'toggle_switch'}]}]}).rooms[0];
+ assert.equal(room.objects[0].switchMode,'action');assert.equal(room.objects[1].switchMode,'appearance');
+});
+test('parser distinguishes text paths from real vault file drags and rejects unsafe URLs',()=>{
+ assert.equal(api.parseOverlayTransfer(dt({'text/plain':'old.md'})).kind,'text');
+ assert.equal(api.parseOverlayTransfer(dt(),{file:new File('old.md')}).kind,'vault-file');
+ assert.equal(api.parseOverlayTransfer(dt({'text/uri-list':'javascript:alert(1)'})),null);
+ assert.equal(api.parseOverlayTransfer(dt({'text/uri-list':'https://example.com/a.png'})).kind,'url');
+ assert.equal(api.parseOverlayTransfer(dt({},[{type:'image/png',name:'a.png'}])).kind,'image');
+});
+test('creates unique new notes in folder, plain text cannot overwrite old notes',async()=>{const f=fixture();
+ const a=await api.applyOverlayTransfer(f.plugin,{kind:'text',text:'hello'},{kind:'folder',path:'Notes'});
+ const b=await api.applyOverlayTransfer(f.plugin,{kind:'text',text:'world'},{kind:'folder',path:'Notes'});
+ assert.notEqual(a,b);assert.ok(a.startsWith('Notes/'));assert.ok(f.content.get(a).includes('hello'));assert.equal(f.content.get('old.md'),'original');
+});
+test('existing-note tagging merges metadata, cancelled move writes nothing',async()=>{const f=fixture();
+ await api.applyOverlayTransfer(f.plugin,{kind:'vault-file',path:'old.md'},{kind:'tag',tag:'#new'});
+ assert.deepEqual(Array.from(f.meta.tags),['old','new']);assert.equal(f.meta.custom,42);
+ assert.equal(await api.applyOverlayTransfer(f.plugin,{kind:'vault-file',path:'old.md'},{kind:'folder',path:'Notes'},async()=>false),null);
+ assert.ok(f.files.has('old.md'));assert.equal(f.files.size,2);
+ await api.applyOverlayTransfer(f.plugin,{kind:'vault-file',path:'old.md'},{kind:'folder',path:'Notes'},async()=>true);
+ assert.ok(f.files.has('Notes/old.md'));
+});
+test('invalid destination, safe mode, invalid tags and stale profile perform no writes',async()=>{const f=fixture();
+ for(const dest of [{kind:'folder',path:'../bad'},{kind:'tag',tag:'bad tag'},{kind:'quick-note',panelId:'q',profileId:'other'}])await assert.rejects(()=>api.applyOverlayTransfer(f.plugin,{kind:'text',text:'x'},dest));
+ f.plugin.canWriteVault=()=>false;await assert.rejects(()=>api.applyOverlayTransfer(f.plugin,{kind:'text',text:'x'},{kind:'folder',path:'Notes'}));assert.equal(f.files.size,2);
+});
+test('quick-note appends, remote URLs are linked without network requests',async()=>{const f=fixture();
+ await api.applyOverlayTransfer(f.plugin,{kind:'text',text:'after'},{kind:'quick-note',panelId:'q',profileId:'p'});assert.equal(f.plugin.settings.panelLayout[0].quickDraftText,'before\n\nafter');
+ const p=await api.applyOverlayTransfer(f.plugin,{kind:'url',url:'https://example.com/a.png'},{kind:'tag',tag:'#web'});assert.ok(f.content.get(p).includes('https://example.com/a.png'));assert.ok(f.content.get(p).includes('web'));
+});
+test('image bytes create an attachment and tagged note, oversize images do not write',async()=>{const f=fixture();
+ const p=await api.applyOverlayTransfer(f.plugin,{kind:'image',file:{type:'image/png',size:3,arrayBuffer:async()=>new Uint8Array([1,2,3]).buffer}},{kind:'tag',tag:'#art'});
+ assert.ok(f.content.get(p).includes('![[Imagen '));assert.equal([...f.files.keys()].filter(p=>p.endsWith('.png')).length,1);
+ const count=f.files.size;await assert.rejects(()=>api.applyOverlayTransfer(f.plugin,{kind:'image',file:{type:'image/png',size:30*1024*1024}},{kind:'folder',path:'Notes'}));assert.equal(f.files.size,count);
+});
+test('safe mode enabled during confirmation prevents moving an existing note',async()=>{const f=fixture();
+ await assert.rejects(()=>api.applyOverlayTransfer(f.plugin,{kind:'vault-file',path:'old.md'},{kind:'folder',path:'Notes'},async()=>{f.plugin.canWriteVault=()=>false;return true;}));assert.ok(f.files.has('old.md'));
+});
+test('a vault image dropped on a tag creates a tagged note without modifying the image',async()=>{const f=fixture();f.files.set('photo.png',new File('photo.png'));f.content.set('photo.png','binary');
+ const result=await api.applyOverlayTransfer(f.plugin,{kind:'vault-file',path:'photo.png'},{kind:'tag',tag:'#art'});
+ assert.ok(result.endsWith('.md'));assert.ok(f.content.get(result).includes('![[photo.png]]'));assert.equal(f.content.get('photo.png'),'binary');
+});

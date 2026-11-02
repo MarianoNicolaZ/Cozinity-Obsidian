@@ -1,0 +1,125 @@
+{
+  "id": "neo-skeuomorphic-dark",
+  "label": "Neo Skeuomorphic Dark",
+  "description": "Paleta oscura tactil con acentos cobre. Volumenes neo-skeuomorficos: emboss, deboss, iluminacion zenital y CTA con glow radial.",
+  "themePreset": "twilight",
+  "previewSwatches": [
+    "#0d0d0d",
+    "#ee6f2c",
+    "#2a2a2a",
+    "#c95a24"
+  ],
+  "assets": {
+    "notebookCover": {
+      "src": ""
+    },
+    "petHelper": "../../assets/nest-helper.gif",
+    "panelMain": {
+      "src": ""
+    },
+    "panelSide": {
+      "src": ""
+    },
+    "headerFrame": {
+      "src": ""
+    },
+    "chipFrame": {
+      "src": ""
+    },
+    "buttonFrame": {
+      "src": ""
+    },
+    "iconButtonFrame": {
+      "src": ""
+    },
+    "decorations": {
+      "flower": "../../assets/deco-flower.svg",
+      "plant": "../../assets/deco-plant.svg",
+      "butterfly": "../../assets/deco-butterfly.svg",
+      "bear": "../../assets/deco-bear.svg",
+      "sparkles": "../../assets/deco-sparkles.svg"
+    }
+  },
+  "tokens": {
+    "shared": {
+      "--cozy-font-family-override": "'Inter', 'Segoe UI', ui-sans-serif, system-ui, sans-serif",
+      "--cozy-font-display-override": "'Inter', 'Segoe UI', ui-sans-serif, system-ui, sans-serif",
+      "--cozy-radius-panel": "22px",
+      "--cozy-radius-button": "12px"
+    },
+    "light": {
+      "--cozy-bg-top": "#0d0d0d",
+      "--cozy-bg-bottom": "#070707",
+      "--cozy-frame-top": "#1a1a1a",
+      "--cozy-frame-bottom": "#0d0d0d",
+      "--cozy-frame-border": "rgba(255, 255, 255, 0.04)",
+      "--cozy-panel-top": "#1e1e1e",
+      "--cozy-panel-bottom": "#141414",
+      "--cozy-panel-border": "rgba(255, 255, 255, 0.04)",
+      "--cozy-panel-shadow": "rgba(0, 0, 0, 0.52)",
+      "--cozy-text": "#e9e9e9",
+      "--cozy-text-muted": "#9f9f9f",
+      "--cozy-chip-bg": "#1a1a1a",
+      "--cozy-chip-border": "rgba(255, 255, 255, 0.06)",
+      "--cozy-button-bg": "#2a2a2a",
+      "--cozy-button-border": "rgba(255, 255, 255, 0.06)",
+      "--cozy-button-hover": "#323232",
+      "--cozy-accent": "#ee6f2c",
+      "--cozy-accent-2": "#f28f5a",
+      "--cozy-accent-3": "#c95a24",
+      "--cozy-calendar-muted": "rgba(255, 255, 255, 0.04)",
+      "--cozy-calendar-today": "rgba(238, 111, 44, 0.30)",
+      "--cozy-calendar-journal": "rgba(238, 111, 44, 0.18)",
+      "--cozy-group-1": "#ee6f2c",
+      "--cozy-group-2": "#c95a24",
+      "--cozy-group-3": "#f28f5a",
+      "--cozy-pet-fur": "#c95a24",
+      "--cozy-pet-fur-dark": "#8a3a14",
+      "--cozy-pet-belly": "#f4c4a2",
+      "--cozy-pet-eye": "#0d0d0d",
+      "--cozy-pet-nose": "#ee6f2c",
+      "--cozy-pet-paw": "#a04a1c",
+      "--cozy-sparkle": "#f28f5a",
+      "--cozy-on-accent": "#141414",
+      "--cozy-link-text": "#ee6f2c",
+      "--cozy-color-scheme": "dark"
+    },
+    "dark": {
+      "--cozy-bg-top": "#0d0d0d",
+      "--cozy-bg-bottom": "#070707",
+      "--cozy-frame-top": "#1a1a1a",
+      "--cozy-frame-bottom": "#0d0d0d",
+      "--cozy-frame-border": "rgba(255, 255, 255, 0.04)",
+      "--cozy-panel-top": "#1e1e1e",
+      "--cozy-panel-bottom": "#141414",
+      "--cozy-panel-border": "rgba(255, 255, 255, 0.04)",
+      "--cozy-panel-shadow": "rgba(0, 0, 0, 0.68)",
+      "--cozy-text": "#f0f0f0",
+      "--cozy-text-muted": "#a6a6a6",
+      "--cozy-chip-bg": "#1c1c1c",
+      "--cozy-chip-border": "rgba(255, 255, 255, 0.06)",
+      "--cozy-button-bg": "#2c2c2c",
+      "--cozy-button-border": "rgba(255, 255, 255, 0.06)",
+      "--cozy-button-hover": "#363636",
+      "--cozy-accent": "#ee6f2c",
+      "--cozy-accent-2": "#f28f5a",
+      "--cozy-accent-3": "#c95a24",
+      "--cozy-calendar-muted": "rgba(255, 255, 255, 0.05)",
+      "--cozy-calendar-today": "rgba(238, 111, 44, 0.34)",
+      "--cozy-calendar-journal": "rgba(238, 111, 44, 0.20)",
+      "--cozy-group-1": "#ee6f2c",
+      "--cozy-group-2": "#c95a24",
+      "--cozy-group-3": "#f28f5a",
+      "--cozy-pet-fur": "#c95a24",
+      "--cozy-pet-fur-dark": "#7a320f",
+      "--cozy-pet-belly": "#f4c4a2",
+      "--cozy-pet-eye": "#0d0d0d",
+      "--cozy-pet-nose": "#ee6f2c",
+      "--cozy-pet-paw": "#924420",
+      "--cozy-sparkle": "#f28f5a",
+      "--cozy-on-accent": "#141414",
+      "--cozy-link-text": "#ee6f2c",
+      "--cozy-color-scheme": "dark"
+    }
+  }
+}

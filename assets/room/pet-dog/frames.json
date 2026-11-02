@@ -1,0 +1,52 @@
+{
+  "width": 384,
+  "height": 256,
+  "anchor": [
+    18,
+    232
+  ],
+  "faceRegion": {
+    "x": 249,
+    "y": 112,
+    "width": 73,
+    "height": 72
+  },
+  "states": {
+    "sleep": [
+      {
+        "file": "frame-00.png",
+        "ms": 1000
+      }
+    ],
+    "wake": [
+      {
+        "file": "frame-00.png",
+        "ms": 180
+      },
+      {
+        "file": "frame-01.png",
+        "ms": 320
+      }
+    ],
+    "alert": [
+      {
+        "file": "frame-02.png",
+        "ms": 300
+      },
+      {
+        "file": "frame-03.png",
+        "ms": 300
+      }
+    ],
+    "settle": [
+      {
+        "file": "frame-01.png",
+        "ms": 250
+      },
+      {
+        "file": "frame-00.png",
+        "ms": 300
+      }
+    ]
+  }
+}

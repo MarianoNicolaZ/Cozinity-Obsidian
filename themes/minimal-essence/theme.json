@@ -1,0 +1,124 @@
+{
+  "id": "minimal-essence",
+  "label": "Minimal Essence",
+  "description": "Editorial monocromo: 1px de borde, cero ruido, decoraciones ocultas. Tipografia limpia y enfoque en el contenido.",
+  "themePreset": "sage",
+  "previewSwatches": [
+    "#ffffff",
+    "#0a0a0a",
+    "#1f6feb"
+  ],
+  "assets": {
+    "notebookCover": {
+      "src": ""
+    },
+    "petHelper": "../../assets/nest-helper.gif",
+    "panelMain": {
+      "src": ""
+    },
+    "panelSide": {
+      "src": ""
+    },
+    "headerFrame": {
+      "src": ""
+    },
+    "chipFrame": {
+      "src": ""
+    },
+    "buttonFrame": {
+      "src": ""
+    },
+    "iconButtonFrame": {
+      "src": ""
+    },
+    "decorations": {
+      "flower": "../../assets/deco-flower.svg",
+      "plant": "../../assets/deco-plant.svg",
+      "butterfly": "../../assets/deco-butterfly.svg",
+      "bear": "../../assets/deco-bear.svg",
+      "sparkles": "../../assets/deco-sparkles.svg"
+    }
+  },
+  "tokens": {
+    "shared": {
+      "--cozy-font-family-override": "var(--font-interface, 'Inter', ui-sans-serif, system-ui, sans-serif)",
+      "--cozy-font-display-override": "var(--font-interface, 'Inter', ui-sans-serif, system-ui, sans-serif)",
+      "--cozy-radius-panel": "8px",
+      "--cozy-radius-button": "6px"
+    },
+    "light": {
+      "--cozy-bg-top": "#ffffff",
+      "--cozy-bg-bottom": "#fafafa",
+      "--cozy-frame-top": "#ffffff",
+      "--cozy-frame-bottom": "#f5f5f5",
+      "--cozy-frame-border": "#e5e5e5",
+      "--cozy-panel-top": "#ffffff",
+      "--cozy-panel-bottom": "#ffffff",
+      "--cozy-panel-border": "#e5e5e5",
+      "--cozy-panel-shadow": "rgba(0, 0, 0, 0.04)",
+      "--cozy-text": "#0a0a0a",
+      "--cozy-text-muted": "#555555",
+      "--cozy-chip-bg": "#fafafa",
+      "--cozy-chip-border": "#e5e5e5",
+      "--cozy-button-bg": "#ffffff",
+      "--cozy-button-border": "#d4d4d4",
+      "--cozy-button-hover": "#f5f5f5",
+      "--cozy-accent": "#1f6feb",
+      "--cozy-accent-2": "#6e7681",
+      "--cozy-accent-3": "#0a0a0a",
+      "--cozy-calendar-muted": "#fafafa",
+      "--cozy-calendar-today": "rgba(31, 111, 235, 0.10)",
+      "--cozy-calendar-journal": "rgba(10, 10, 10, 0.06)",
+      "--cozy-group-1": "#1f6feb",
+      "--cozy-group-2": "#6e7681",
+      "--cozy-group-3": "#737373",
+      "--cozy-pet-fur": "#a3a3a3",
+      "--cozy-pet-fur-dark": "#525252",
+      "--cozy-pet-belly": "#f5f5f5",
+      "--cozy-pet-eye": "#0a0a0a",
+      "--cozy-pet-nose": "#525252",
+      "--cozy-pet-paw": "#a3a3a3",
+      "--cozy-sparkle": "#d4d4d4",
+      "--cozy-on-accent": "#ffffff",
+      "--cozy-link-text": "#1e6ce4",
+      "--cozy-color-scheme": "light"
+    },
+    "dark": {
+      "--cozy-bg-top": "#0a0a0a",
+      "--cozy-bg-bottom": "#0a0a0a",
+      "--cozy-frame-top": "#171717",
+      "--cozy-frame-bottom": "#0a0a0a",
+      "--cozy-frame-border": "#262626",
+      "--cozy-panel-top": "#171717",
+      "--cozy-panel-bottom": "#171717",
+      "--cozy-panel-border": "#262626",
+      "--cozy-panel-shadow": "rgba(0, 0, 0, 0.40)",
+      "--cozy-text": "#fafafa",
+      "--cozy-text-muted": "#a3a3a3",
+      "--cozy-chip-bg": "#171717",
+      "--cozy-chip-border": "#262626",
+      "--cozy-button-bg": "#171717",
+      "--cozy-button-border": "#404040",
+      "--cozy-button-hover": "#262626",
+      "--cozy-accent": "#58a6ff",
+      "--cozy-accent-2": "#8b949e",
+      "--cozy-accent-3": "#fafafa",
+      "--cozy-calendar-muted": "#171717",
+      "--cozy-calendar-today": "rgba(88, 166, 255, 0.16)",
+      "--cozy-calendar-journal": "rgba(250, 250, 250, 0.08)",
+      "--cozy-group-1": "#58a6ff",
+      "--cozy-group-2": "#8b949e",
+      "--cozy-group-3": "#a3a3a3",
+      "--cozy-pet-fur": "#737373",
+      "--cozy-pet-fur-dark": "#404040",
+      "--cozy-pet-belly": "#262626",
+      "--cozy-pet-eye": "#fafafa",
+      "--cozy-pet-nose": "#a3a3a3",
+      "--cozy-pet-paw": "#737373",
+      "--cozy-sparkle": "#404040",
+      "--cozy-on-accent": "#141414",
+      "--cozy-link-text": "#58a6ff",
+      "--cozy-color-scheme": "dark"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+data.json
+*.zip
+node_modules/
+tests/artifacts/
+dist/
+tmp/
+.obsidian/
+.cozinity-review-staging
+.DS_Store
+Thumbs.db

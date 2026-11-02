@@ -1,0 +1,12 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),{execFileSync}=require('node:child_process');
+const root=path.resolve(__dirname,'..'),manifest=JSON.parse(fs.readFileSync(path.join(root,'manifest.json'),'utf8'));
+execFileSync(process.execPath,[path.join(__dirname,'verify-private.cjs'),'--files'],{stdio:'inherit'});
+const dist=path.join(root,'dist'),stage=path.join(dist,'install','cozynity');fs.mkdirSync(stage,{recursive:true});
+const runtime=['main.js','styles.css','manifest.json','versions.json','blocks.js','pet-room.js','pet-reminders.js','shortcut-library.cjs','shortcut-library.css','shortcut-model.cjs','LICENSE','CREDITS.md','README.md','README.es.md','INSTALACION.md','BETA_TESTING.md','CHANGELOG.md'];
+for(const name of [...runtime,'assets','themes','docs'])fs.cpSync(path.join(root,name),path.join(stage,name),{recursive:true});
+const zip=path.join(dist,'cozinity-'+manifest.version+'.zip');const quote=s=>"'"+s.replace(/'/g,"''")+"'";
+execFileSync('powershell.exe',['-NoProfile','-NonInteractive','-Command','Compress-Archive -LiteralPath '+quote(stage)+' -DestinationPath '+quote(zip)+' -CompressionLevel Optimal -Force'],{stdio:'inherit',windowsHide:true});
+for(const name of ['main.js','styles.css','manifest.json'])fs.copyFileSync(path.join(root,name),path.join(dist,name));
+const assets=[path.basename(zip),'main.js','styles.css','manifest.json'];const sums=assets.map(name=>crypto.createHash('sha256').update(fs.readFileSync(path.join(dist,name))).digest('hex')+'  '+name).join('\n')+'\n';fs.writeFileSync(path.join(dist,'SHA256SUMS.txt'),sums);
+console.log(JSON.stringify({version:manifest.version,zip,bytes:fs.statSync(zip).size,files:assets.concat('SHA256SUMS.txt')},null,2));

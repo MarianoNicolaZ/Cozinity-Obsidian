@@ -1,0 +1,222 @@
+{
+  "plush_bear": {
+    "atlas": "personal-plush",
+    "cell": 0,
+    "crop": [
+      42,
+      76,
+      300,
+      360
+    ],
+    "scale": 0.48
+  },
+  "plush_cat": {
+    "atlas": "personal-plush",
+    "cell": 1,
+    "crop": [
+      426,
+      76,
+      300,
+      360
+    ],
+    "scale": 0.45
+  },
+  "plush_dog": {
+    "atlas": "personal-plush",
+    "cell": 2,
+    "crop": [
+      810,
+      76,
+      300,
+      360
+    ],
+    "scale": 0.48
+  },
+  "poster_taylor_concert": {
+    "atlas": "personal-plush",
+    "cell": 3,
+    "crop": [
+      1219,
+      66,
+      250,
+      380
+    ],
+    "scale": 1.45
+  },
+  "poster_taylor_pink": {
+    "atlas": "personal-plush",
+    "cell": 4,
+    "crop": [
+      67,
+      578,
+      250,
+      380
+    ],
+    "scale": 1.45
+  },
+  "streaming_mic": {
+    "atlas": "personal-plush",
+    "cell": 5,
+    "crop": [
+      436,
+      568,
+      280,
+      400
+    ],
+    "scale": 0.43
+  },
+  "skateboard": {
+    "atlas": "personal-plush",
+    "cell": 6,
+    "crop": [
+      880,
+      553,
+      160,
+      430
+    ],
+    "scale": 0.85
+  },
+  "travel_suitcases": {
+    "atlas": "personal-plush",
+    "cell": 7,
+    "crop": [
+      1174,
+      568,
+      340,
+      400
+    ],
+    "scale": 0.78
+  },
+  "mini_fridge": {
+    "atlas": "personal-study",
+    "cell": 0,
+    "crop": [
+      32,
+      61,
+      320,
+      390
+    ],
+    "scale": 0.72
+  },
+  "spiral_notebook": {
+    "atlas": "personal-study",
+    "cell": 1,
+    "crop": [
+      426,
+      61,
+      300,
+      390
+    ],
+    "scale": 0.32
+  },
+  "notepad": {
+    "atlas": "personal-study",
+    "cell": 2,
+    "crop": [
+      795,
+      76,
+      330,
+      360
+    ],
+    "scale": 0.3
+  },
+  "typewriter": {
+    "atlas": "personal-study",
+    "cell": 3,
+    "crop": [
+      1164,
+      96,
+      360,
+      320
+    ],
+    "scale": 0.46
+  },
+  "lucky_cat": {
+    "atlas": "personal-study",
+    "cell": 4,
+    "crop": [
+      42,
+      588,
+      300,
+      360
+    ],
+    "scale": 0.48
+  },
+  "dollhouse": {
+    "atlas": "personal-study",
+    "cell": 5,
+    "crop": [
+      396,
+      568,
+      360,
+      400
+    ],
+    "scale": 0.9
+  },
+  "electric_guitar": {
+    "atlas": "personal-hobbies",
+    "cell": 0,
+    "crop": [
+      102,
+      36,
+      180,
+      440
+    ],
+    "scale": 0.94
+  },
+  "acoustic_guitar": {
+    "atlas": "personal-hobbies",
+    "cell": 1,
+    "crop": [
+      476,
+      36,
+      200,
+      440
+    ],
+    "scale": 0.94
+  },
+  "drum_kit": {
+    "atlas": "personal-hobbies",
+    "cell": 2,
+    "crop": [
+      780,
+      106,
+      360,
+      300
+    ],
+    "scale": 1.05
+  },
+  "drawing_easel": {
+    "atlas": "personal-hobbies",
+    "cell": 3,
+    "crop": [
+      1204,
+      46,
+      280,
+      420
+    ],
+    "scale": 1.08
+  },
+  "photo_camera": {
+    "atlas": "personal-hobbies",
+    "cell": 4,
+    "crop": [
+      17,
+      618,
+      350,
+      300
+    ],
+    "scale": 0.38
+  },
+  "corkboard": {
+    "atlas": "personal-hobbies",
+    "cell": 5,
+    "crop": [
+      396,
+      618,
+      360,
+      300
+    ],
+    "scale": 1.6
+  }
+}

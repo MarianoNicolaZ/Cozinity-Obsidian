@@ -1,0 +1,285 @@
+{
+  "id": "stardew-valley-cozy",
+  "label": "Stardew Cozy",
+  "description": "UI de videojuego cozy: marco pixel art fino, fondo plano tibio y cuadernos tipo inventario.",
+  "themePreset": "sunlit",
+  "previewSwatches": [
+    "#f4e2b7",
+    "#7d9f59",
+    "#8c5a31",
+    "#e88fa5"
+  ],
+  "boardBackground": {
+    "mode": "gradient",
+    "color1": "#f4e2b7",
+    "color2": "#e5cf8d",
+    "angle": 180
+  },
+  "assets": {
+    "boardBackground": "./generated/dashboard-board-bg-v1.png",
+    "notebookCover": {
+      "src": ""
+    },
+    "petHelper": "../../assets/nest-helper.gif",
+    "panelMain": {
+      "src": "./generated/panel-pixel-9slice-v4.png",
+      "frameMode": "nine-slice",
+      "slice": {
+        "top": 6,
+        "right": 6,
+        "bottom": 6,
+        "left": 6
+      },
+      "border": {
+        "top": 5,
+        "right": 5,
+        "bottom": 5,
+        "left": 5
+      },
+      "contentInset": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "fill": true,
+      "repeat": "repeat",
+      "radius": 3,
+      "shadow": "0 8px 0 rgba(74, 42, 21, 0.10)",
+      "minSize": {
+        "width": 0,
+        "height": 0
+      }
+    },
+    "panelSide": {
+      "src": "./generated/panel-pixel-9slice-v4.png",
+      "frameMode": "nine-slice",
+      "slice": {
+        "top": 6,
+        "right": 6,
+        "bottom": 6,
+        "left": 6
+      },
+      "border": {
+        "top": 5,
+        "right": 5,
+        "bottom": 5,
+        "left": 5
+      },
+      "contentInset": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "fill": true,
+      "repeat": "repeat",
+      "radius": 3,
+      "shadow": "0 8px 0 rgba(74, 42, 21, 0.10)",
+      "minSize": {
+        "width": 0,
+        "height": 0
+      }
+    },
+    "headerFrame": {
+      "src": "./generated/panel-pixel-9slice-v4.png",
+      "frameMode": "nine-slice",
+      "slice": {
+        "top": 6,
+        "right": 6,
+        "bottom": 6,
+        "left": 6
+      },
+      "border": {
+        "top": 5,
+        "right": 5,
+        "bottom": 5,
+        "left": 5
+      },
+      "contentInset": {
+        "top": 10,
+        "right": 10,
+        "bottom": 10,
+        "left": 10
+      },
+      "fill": true,
+      "repeat": "repeat",
+      "radius": 3,
+      "shadow": "0 8px 0 rgba(74, 42, 21, 0.10)"
+    },
+    "chipFrame": {
+      "src": "./generated/button-pixel-9slice-v4.png",
+      "frameMode": "nine-slice",
+      "slice": {
+        "top": 5,
+        "right": 6,
+        "bottom": 5,
+        "left": 6
+      },
+      "border": {
+        "top": 3,
+        "right": 3,
+        "bottom": 3,
+        "left": 3
+      },
+      "contentInset": {
+        "top": 2,
+        "right": 7,
+        "bottom": 2,
+        "left": 7
+      },
+      "fill": true,
+      "repeat": "repeat",
+      "radius": 2,
+      "shadow": "0 3px 0 rgba(74, 42, 21, 0.18)"
+    },
+    "buttonFrame": {
+      "src": "./generated/button-pixel-9slice-v4.png",
+      "frameMode": "nine-slice",
+      "slice": {
+        "top": 5,
+        "right": 6,
+        "bottom": 5,
+        "left": 6
+      },
+      "border": {
+        "top": 3,
+        "right": 3,
+        "bottom": 3,
+        "left": 3
+      },
+      "contentInset": {
+        "top": 3,
+        "right": 8,
+        "bottom": 3,
+        "left": 8
+      },
+      "fill": true,
+      "repeat": "repeat",
+      "radius": 2,
+      "shadow": "0 3px 0 rgba(74, 42, 21, 0.18)"
+    },
+    "iconButtonFrame": {
+      "src": "./generated/icon-button-pixel-9slice-v4.png",
+      "frameMode": "nine-slice",
+      "slice": {
+        "top": 6,
+        "right": 6,
+        "bottom": 6,
+        "left": 6
+      },
+      "border": {
+        "top": 3,
+        "right": 3,
+        "bottom": 3,
+        "left": 3
+      },
+      "contentInset": {
+        "top": 3,
+        "right": 3,
+        "bottom": 3,
+        "left": 3
+      },
+      "fill": true,
+      "repeat": "repeat",
+      "radius": 2,
+      "shadow": "0 3px 0 rgba(74, 42, 21, 0.18)"
+    },
+    "decorations": {
+      "flower": "../../assets/deco-flower.svg",
+      "plant": "../../assets/deco-plant.svg",
+      "butterfly": "../../assets/deco-butterfly.svg",
+      "bear": "../../assets/deco-bear.svg",
+      "sparkles": "../../assets/deco-sparkles.svg"
+    }
+  },
+  "tokens": {
+    "shared": {
+      "--cozy-font-family-override": "'Nunito', ui-rounded, 'Segoe UI', system-ui, sans-serif",
+      "--cozy-font-display-override": "'Courier New', 'Lucida Console', monospace",
+      "--cozy-radius-panel": "3px",
+      "--cozy-radius-button": "2px",
+      "--notebook-cover": "var(--cozy-accent)",
+      "--notebook-cover-2": "var(--cozy-accent-2)",
+      "--notebook-page": "var(--cozy-panel-top)",
+      "--cozy-notebook-cover-blend-mode": "normal",
+      "--cozy-notebook-cover-opacity": "0.96",
+      "--cozy-notebook-cover-size": "100% 100%",
+      "--cozy-notebook-cover-filter": "drop-shadow(0 1px 0 rgba(255, 255, 255, 0.08))"
+    },
+    "light": {
+      "--cozy-bg-top": "#f4e2b7",
+      "--cozy-bg-bottom": "#e5cf8d",
+      "--cozy-frame-top": "#a67247",
+      "--cozy-frame-bottom": "#7f4e2a",
+      "--cozy-frame-border": "#4a2a15",
+      "--cozy-panel-top": "#fbf0d0",
+      "--cozy-panel-bottom": "#f2dea5",
+      "--cozy-panel-border": "rgba(74, 42, 21, 0.52)",
+      "--cozy-panel-shadow": "rgba(60, 34, 16, 0.22)",
+      "--cozy-text": "#2c1c0e",
+      "--cozy-text-muted": "#5a3f22",
+      "--cozy-chip-bg": "#f6e8bd",
+      "--cozy-chip-border": "rgba(74, 42, 21, 0.46)",
+      "--cozy-button-bg": "#f2d98c",
+      "--cozy-button-border": "rgba(74, 42, 21, 0.52)",
+      "--cozy-button-hover": "#f7e3a1",
+      "--cozy-accent": "#7d9f59",
+      "--cozy-accent-2": "#c14a4a",
+      "--cozy-accent-3": "#e8b23a",
+      "--cozy-calendar-muted": "rgba(74, 42, 21, 0.18)",
+      "--cozy-calendar-today": "rgba(125, 159, 89, 0.30)",
+      "--cozy-calendar-journal": "rgba(232, 178, 58, 0.30)",
+      "--cozy-group-1": "#e88fa5",
+      "--cozy-group-2": "#9cc9d8",
+      "--cozy-group-3": "#e8b23a",
+      "--cozy-pet-fur": "#d4915f",
+      "--cozy-pet-fur-dark": "#8c5a31",
+      "--cozy-pet-belly": "#fbeccb",
+      "--cozy-pet-eye": "#2c1c0e",
+      "--cozy-pet-nose": "#c14a4a",
+      "--cozy-pet-paw": "#d4915f",
+      "--cozy-sparkle": "#f4e2b7",
+      "--cozy-on-accent": "#141414",
+      "--cozy-link-text": "#4f6438",
+      "--cozy-color-scheme": "light"
+    },
+    "dark": {
+      "--cozy-bg-top": "#2a2533",
+      "--cozy-bg-bottom": "#181421",
+      "--cozy-frame-top": "#5c3c22",
+      "--cozy-frame-bottom": "#3a2414",
+      "--cozy-frame-border": "#130a04",
+      "--cozy-panel-top": "#3a2f22",
+      "--cozy-panel-bottom": "#27201a",
+      "--cozy-panel-border": "rgba(244, 226, 183, 0.22)",
+      "--cozy-panel-shadow": "rgba(0, 0, 0, 0.45)",
+      "--cozy-text": "#f4e2b7",
+      "--cozy-text-muted": "#d4bd8a",
+      "--cozy-chip-bg": "rgba(244, 226, 183, 0.10)",
+      "--cozy-chip-border": "rgba(244, 226, 183, 0.28)",
+      "--cozy-button-bg": "#4a3624",
+      "--cozy-button-border": "rgba(244, 226, 183, 0.30)",
+      "--cozy-button-hover": "#5c4530",
+      "--cozy-accent": "#a8c675",
+      "--cozy-accent-2": "#e06a6a",
+      "--cozy-accent-3": "#f5c558",
+      "--cozy-calendar-muted": "rgba(244, 226, 183, 0.10)",
+      "--cozy-calendar-today": "rgba(168, 198, 117, 0.32)",
+      "--cozy-calendar-journal": "rgba(245, 197, 88, 0.30)",
+      "--cozy-group-1": "#e88fa5",
+      "--cozy-group-2": "#7fb1c4",
+      "--cozy-group-3": "#f5c558",
+      "--cozy-pet-fur": "#c88554",
+      "--cozy-pet-fur-dark": "#7a4b28",
+      "--cozy-pet-belly": "#f0dbb2",
+      "--cozy-pet-eye": "#1a0f05",
+      "--cozy-pet-nose": "#c14a4a",
+      "--cozy-pet-paw": "#b87548",
+      "--cozy-sparkle": "#f5c558",
+      "--cozy-on-accent": "#141414",
+      "--cozy-link-text": "#a8c675",
+      "--cozy-color-scheme": "dark"
+    }
+  }
+}

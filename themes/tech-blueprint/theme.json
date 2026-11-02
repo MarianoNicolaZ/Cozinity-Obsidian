@@ -1,0 +1,80 @@
+{
+  "id": "tech-blueprint",
+  "label": "Blueprint Desk",
+  "description": "Azules sobrios, contraste nitido y un aire de estudio tecnico.",
+  "themePreset": "twilight",
+  "previewSwatches": [
+    "#d9ebf4",
+    "#5ba9c6",
+    "#203247"
+  ],
+  "assets": {
+    "notebookCover": "../../assets/notebook-cover-stardew.png",
+    "panelMain": "../../assets/panel-main-window.png",
+    "panelSide": "../../assets/panel-side-window.png",
+    "petHelper": "../../assets/nest-helper.gif",
+    "decorations": {
+      "flower": "../../assets/deco-flower.svg",
+      "plant": "../../assets/deco-plant.svg",
+      "butterfly": "../../assets/deco-butterfly.svg",
+      "bear": "../../assets/deco-bear.svg",
+      "sparkles": "../../assets/deco-sparkles.svg"
+    }
+  },
+  "tokens": {
+    "light": {
+      "--cozy-bg-top": "#dbe8ef",
+      "--cozy-bg-bottom": "#c5d8e4",
+      "--cozy-frame-top": "#5a7187",
+      "--cozy-frame-bottom": "#37485d",
+      "--cozy-frame-border": "#273647",
+      "--cozy-panel-top": "#f5fbff",
+      "--cozy-panel-bottom": "#ddeaf2",
+      "--cozy-panel-border": "rgba(45, 80, 108, 0.18)",
+      "--cozy-panel-shadow": "rgba(33, 55, 74, 0.18)",
+      "--cozy-text": "#223244",
+      "--cozy-text-muted": "#4e6579",
+      "--cozy-chip-bg": "rgba(255, 255, 255, 0.64)",
+      "--cozy-chip-border": "rgba(45, 80, 108, 0.12)",
+      "--cozy-button-bg": "#d7e9f1",
+      "--cozy-button-border": "rgba(45, 80, 108, 0.18)",
+      "--cozy-button-hover": "#e5f3f8",
+      "--cozy-accent": "#5ba9c6",
+      "--cozy-accent-2": "#4f7c9e",
+      "--cozy-accent-3": "#9ed6ea",
+      "--cozy-group-1": "#9ed6ea",
+      "--cozy-group-2": "#a8c4db",
+      "--cozy-group-3": "#becdde",
+      "--cozy-on-accent": "#141414",
+      "--cozy-link-text": "#396a7d",
+      "--cozy-color-scheme": "light"
+    },
+    "dark": {
+      "--cozy-bg-top": "#142131",
+      "--cozy-bg-bottom": "#0d1723",
+      "--cozy-frame-top": "#38516b",
+      "--cozy-frame-bottom": "#233447",
+      "--cozy-frame-border": "#0a1421",
+      "--cozy-panel-top": "#203246",
+      "--cozy-panel-bottom": "#152436",
+      "--cozy-panel-border": "rgba(176, 220, 245, 0.12)",
+      "--cozy-panel-shadow": "rgba(0, 0, 0, 0.28)",
+      "--cozy-text": "#edf6fb",
+      "--cozy-text-muted": "#b1cbdd",
+      "--cozy-chip-bg": "rgba(221, 240, 252, 0.08)",
+      "--cozy-chip-border": "rgba(190, 228, 248, 0.12)",
+      "--cozy-button-bg": "#294056",
+      "--cozy-button-border": "rgba(190, 228, 248, 0.16)",
+      "--cozy-button-hover": "#35526c",
+      "--cozy-accent": "#73c5e0",
+      "--cozy-accent-2": "#5d8fb0",
+      "--cozy-accent-3": "#b7e5f3",
+      "--cozy-group-1": "#467e9c",
+      "--cozy-group-2": "#5f7894",
+      "--cozy-group-3": "#6f8ca3",
+      "--cozy-on-accent": "#141414",
+      "--cozy-link-text": "#73c5e0",
+      "--cozy-color-scheme": "dark"
+    }
+  }
+}

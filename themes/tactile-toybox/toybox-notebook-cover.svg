@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1120" fill="none">
+  <defs>
+    <linearGradient id="cover" x1="108" y1="54" x2="696" y2="1054" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#EEF4FB"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="84" y1="84" x2="716" y2="84" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF79B0"/>
+      <stop offset="1" stop-color="#FF9CC6"/>
+    </linearGradient>
+    <radialGradient id="mint" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(226 824) rotate(90) scale(216 202)">
+      <stop stop-color="#79F8DF" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#79F8DF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gold" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(612 886) rotate(90) scale(208 190)">
+      <stop stop-color="#FCD43E" stop-opacity="0.86"/>
+      <stop offset="1" stop-color="#FCD43E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="40" y="40" width="720" height="1040" rx="124" fill="url(#cover)"/>
+  <rect x="72" y="72" width="656" height="92" rx="46" fill="url(#accent)"/>
+  <rect x="86" y="194" width="628" height="820" rx="84" fill="white" fill-opacity="0.54"/>
+  <circle cx="226" cy="824" r="202" fill="url(#mint)"/>
+  <circle cx="612" cy="886" r="190" fill="url(#gold)"/>
+  <g opacity="0.42">
+    <circle cx="620" cy="246" r="42" fill="white"/>
+    <circle cx="674" cy="286" r="16" fill="white"/>
+  </g>
+</svg>

@@ -1,0 +1,13 @@
+const {test}=require('node:test'),assert=require('node:assert/strict');
+const {createPetReminderController}=require('../pet-reminders');
+function setup(extra={}){
+ let time=0,id=0,visible=false,shown=[],recent=[];const jobs=new Map();
+ const clock={now:()=>time,setTimeout:(fn,ms)=>{jobs.set(++id,{fn,at:time+ms});return id},clearTimeout:id=>jobs.delete(id),async advance(ms,jump=false){const target=time+ms;if(jump)time=target;while(true){const next=[...jobs].filter(([,j])=>j.at<=target).sort((a,b)=>a[1].at-b[1].at)[0];if(!next)break;jobs.delete(next[0]);if(!jump)time=next[1].at;next[1].fn();for(let n=0;n<10;n++)await Promise.resolve();}time=target;}};
+ const c=createPetReminderController({clock,random:()=>0,loadCandidates:async()=>({available:true,items:[{id:'a',kind:'today'}]}),present:item=>{visible=true;shown.push(item)},dismiss:()=>visible=false,getRecent:()=>recent,saveRecent:r=>recent=r,...extra});
+ return {c,clock,jobs,shown,get visible(){return visible}};
+}
+test('20 minute initial wait, 30 second bubble and next wait',async()=>{const s=setup();s.c.setActive(true);await s.clock.advance(1199999);assert.equal(s.shown.length,0);await s.clock.advance(1);assert.equal(s.visible,true);await s.clock.advance(29999);assert.equal(s.visible,true);await s.clock.advance(1);assert.equal(s.visible,false);assert.equal(s.jobs.size,1);s.c.dispose();assert.equal(s.jobs.size,0)});
+test('upper interval and repeated activation do not accelerate alerts',async()=>{const s=setup({random:()=>.999999});s.c.setActive(true);s.c.setActive(true);await s.clock.advance(2399998);assert.equal(s.shown.length,0);await s.clock.advance(2);assert.equal(s.shown.length,1);s.c.close();assert.equal(s.visible,false)});
+test('hidden/disposed controller rejects stale async reads',async()=>{let resolve;const s=setup({loadCandidates:()=>new Promise(r=>resolve=r)});s.c.setActive(true);await s.clock.advance(1200000);s.c.setActive(false);resolve({available:true,items:[{id:'a'}]});await Promise.resolve();await Promise.resolve();assert.equal(s.shown.length,0);assert.equal(s.jobs.size,0);s.c.dispose()});
+test('sleep/resume discards catchup rather than presenting stale reminders',async()=>{const s=setup();s.c.setActive(true);await s.clock.advance(2*3600000,true);assert.equal(s.shown.length,0);assert.equal(s.jobs.size,1)});
+test('missing/throwing sources stay asleep and reschedule',async()=>{for(const loadCandidates of [async()=>({available:true,items:[]}),async()=>{throw Error('unavailable')}]){const s=setup({loadCandidates});s.c.setActive(true);await s.clock.advance(1200000);assert.equal(s.shown.length,0);assert.equal(s.jobs.size,1);s.c.dispose()}});

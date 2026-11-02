@@ -1,0 +1,50 @@
+{
+  "id": "obsidian-native",
+  "label": "Obsidian Native",
+  "description": "Hereda colores y tipografia del tema activo de Obsidian. Usalo cuando quieras que el dashboard se integre sin friccion.",
+  "themePreset": "sunlit",
+  "previewSwatches": [
+    "#7f6df2",
+    "#353942",
+    "#e4e7eb"
+  ],
+  "assets": {
+    "notebookCover": {
+      "src": ""
+    },
+    "petHelper": "../../assets/nest-helper.gif",
+    "panelMain": {
+      "src": ""
+    },
+    "panelSide": {
+      "src": ""
+    },
+    "headerFrame": {
+      "src": ""
+    },
+    "chipFrame": {
+      "src": ""
+    },
+    "buttonFrame": {
+      "src": ""
+    },
+    "iconButtonFrame": {
+      "src": ""
+    },
+    "decorations": {
+      "flower": "../../assets/deco-flower.svg",
+      "plant": "../../assets/deco-plant.svg",
+      "butterfly": "../../assets/deco-butterfly.svg",
+      "bear": "../../assets/deco-bear.svg",
+      "sparkles": "../../assets/deco-sparkles.svg"
+    }
+  },
+  "tokens": {
+    "shared": {
+      "--cozy-font-family-override": "var(--font-interface)",
+      "--cozy-font-display-override": "var(--font-interface)",
+      "--cozy-radius-panel": "var(--radius-l, 14px)",
+      "--cozy-radius-button": "var(--radius-s, 8px)"
+    }
+  }
+}

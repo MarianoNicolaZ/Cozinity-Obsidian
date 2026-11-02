@@ -1,0 +1,29 @@
+{
+  "name": "cozinity",
+  "version": "0.1.11",
+  "private": true,
+  "description": "Cozinity visual dashboard plugin for Obsidian. Español / English.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.cjs",
+    "test:browser": "node scripts/verify-private.cjs --browser",
+    "verify:release": "node scripts/verify-private.cjs --files",
+    "media:capture": "node scripts/capture-private-demo.cjs",
+    "release:package": "node scripts/package-plugin.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1",
+    "pngjs": "7.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MarianoNicolaZ/Cozinity-Obsidian.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MarianoNicolaZ/Cozinity-Obsidian/issues"
+  },
+  "homepage": "https://github.com/MarianoNicolaZ/Cozinity-Obsidian"
+}
