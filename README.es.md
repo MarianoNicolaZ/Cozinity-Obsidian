@@ -66,7 +66,7 @@ El uso local no necesita cuenta en la nube. Abrir páginas, contenido YouTube/Sp
 - [Solución de problemas](docs/es/SOLUCION_DE_PROBLEMAS.md) / [English troubleshooting](docs/en/TROUBLESHOOTING.md)
 - [Pruebas beta / Beta checklist](BETA_TESTING.md)
 
-Las demostraciones usan datos ficticios y renderers de producción en navegador con límites de Obsidian simulados. No son capturas de un vault personal ni certifican funcionamiento en Obsidian real. Falta completar la revisión nativa en un vault limpio.
+Las demos adicionales de navegador usan datos ficticios y renderers de producción en navegador con límites de Obsidian simulados. No son capturas de un vault personal ni certifican funcionamiento en Obsidian real. Falta completar la revisión nativa en un vault limpio.
 
 ## Demostraciones
 

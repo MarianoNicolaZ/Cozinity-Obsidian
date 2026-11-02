@@ -67,7 +67,7 @@ Local dashboard use needs no cloud account. Websites, YouTube/Spotify embeds and
 - [English troubleshooting](docs/en/TROUBLESHOOTING.md) / [Solución de problemas](docs/es/SOLUCION_DE_PROBLEMAS.md)
 - [Beta checklist / Pruebas beta](BETA_TESTING.md)
 
-Release demonstrations use fictional data and production renderers in a browser harness with simulated Obsidian boundaries. They are not screenshots of a personal vault and do not certify operation in real Obsidian. Native testing in a clean vault remains pending; browser tests do not replace that validation.
+The additional browser demonstrations use fictional data and production renderers in a browser harness with simulated Obsidian boundaries. They are not screenshots of a personal vault and do not certify operation in real Obsidian. Native testing in a clean vault remains pending; browser tests do not replace that validation.
 
 ## Demonstrations
 

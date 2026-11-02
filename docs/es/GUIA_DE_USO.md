@@ -141,7 +141,7 @@ Las instalaciones nuevas usan modo seguro. **Personalizar → Avanzado → Permi
 
 ## 12. Revisión y ayuda
 
-Las capturas/GIF son demostraciones con datos ficticios y renderers de producción en navegador con límites de Obsidian simulados. No muestran un vault personal en vivo ni certifican integraciones nativas. Completa las [pruebas beta](../../BETA_TESTING.md) en un vault limpio. Consulta [Solución de problemas](SOLUCION_DE_PROBLEMAS.md) para instalación, reintentos y diagnóstico.
+Las capturas/GIF adicionales de navegador son demostraciones con datos ficticios y renderers de producción en navegador con límites de Obsidian simulados. No muestran un vault personal en vivo ni certifican integraciones nativas. Completa las [pruebas beta](../../BETA_TESTING.md) en un vault limpio. Consulta [Solución de problemas](SOLUCION_DE_PROBLEMAS.md) para instalación, reintentos y diagnóstico.
 
 ### Elegir fondos del vault
 

@@ -141,7 +141,7 @@ Fresh installs use Safe Mode. **Customize → Advanced → Allow creating and ed
 
 ## 12. Review and help
 
-Release screenshots/GIFs are fictional-data demonstrations using production renderers in a browser harness with simulated Obsidian boundaries. They do not show a live personal vault or certify native integrations. Complete the [beta checklist](../../BETA_TESTING.md) in a clean vault. See [Troubleshooting](TROUBLESHOOTING.md) for installation, retry and diagnostics.
+The additional browser screenshots/GIFs are fictional-data demonstrations using production renderers in a browser harness with simulated Obsidian boundaries. They do not show a live personal vault or certify native integrations. Complete the [beta checklist](../../BETA_TESTING.md) in a clean vault. See [Troubleshooting](TROUBLESHOOTING.md) for installation, retry and diagnostics.
 
 ### Choosing vault backgrounds
 
